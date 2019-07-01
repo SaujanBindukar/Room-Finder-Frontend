@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3>
+        <img src="../../assets/imgs/man.png" alt="Profile PNG" margin-vertical />
+      </ion-col>
+      <ion-col col-9>
+        <ion-item text-wrap>
+          <ion-icon name="person" item-start small></ion-icon>
+          {{ profile.fullname }}
+        </ion-item>
+        <ion-item text-wrap>
+          <ion-icon name="mail" item-start small></ion-icon>
+          {{ profile.email }}
+        </ion-item>
+        <ion-item text-wrap>
+          <ion-icon name="call" item-start small></ion-icon>
+          {{ profile.phone }}
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list inset no-padding>
+    <button ion-item (click)="personalDetails()">
+      <ion-icon name="person" item-start small ></ion-icon>
+      Personal Details
+      <ion-icon name="arrow-dropright" item-end small></ion-icon>
+    </button>
+    <button ion-item (click)="viewPosts()">
+      <ion-icon name="paper" item-start small></ion-icon>
+      View Posts
+      <ion-icon name="arrow-dropright" item-end small></ion-icon>
+    </button>
+    <button ion-item>
+      <ion-icon name="help-circle" item-start small></ion-icon>
+      Get Help
+      <ion-icon name="arrow-dropright" item-end small></ion-icon>
+    </button>
+    <br>
+    <button ion-item (click)="logout()">
+      <ion-icon name="log-out" item-start small></ion-icon>
+      Logout
+      <ion-icon name="ios-arrow-dropright-circle" item-end></ion-icon>
+    </button>
+  </ion-list>
+  
+</ion-content>

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Room Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content margin-top style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); " >
+  <ion-card>
+
+    <ion-slides pager>
+      <ion-slide *ngFor="let img of deal.roomImage">
+        <img src="{{ roomFinder.BASEURL +'/RoomImage/' + img }}" />
+      </ion-slide>    
+    </ion-slides>
+    <!-- <ion-card-content> -->
+      <ion-item style=" font-size: 17px">
+        <b> Number Of Rooms :</b> {{ deal.numberOfRoom }}
+        <br>
+        <hr>
+        <b>Location :</b> {{ deal.location }}
+        <br>
+        <hr>
+        <b>Owner Name:</b> {{deal.ownerName}}
+        <br>
+        <hr>
+        <b>Price(Rs) : </b>{{ deal.price }}
+        <br>
+        <hr>
+        <b>Owner Phone :</b> {{ deal.ownerPhone }}
+        <br>
+        <hr>
+        <b>Facilities Available :</b>
+        <ion-list>
+          <ion-item *ngFor="let facilities of returnObjectWithTrue(deal.facilitiesAvailable)"> {{ facilities }}
+          </ion-item>
+        </ion-list>
+        <br>
+        <hr>
+        <b>Other Facilities :</b> <br> {{ deal.additionalFacilities || 'No other facilities' }}
+        <hr>
+        <ion-grid >
+          <ion-row>
+            <ion-col >
+              <button ion-button icon-only *ngIf="!isOwner" (click)="contact(deal)" color="green" small style="margin-left:0%; padding-top:5px; padding-bottom: 5px; padding-left: 5px;">
+                <ion-icon name="call"> CALL</ion-icon>
+              </button>
+              <button ion-button icon-only *ngIf="!isOwner" (click)="newChat(deal.ownerId)" small style="margin-left:35px; padding-top:5px; padding-bottom: 5px;">
+                <ion-icon name="chatboxes"> MESSAGE</ion-icon>
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+  </ion-card>
+</ion-content>

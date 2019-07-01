@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-toolbar>
+            <!-- <ion-searchbar [(ngModel)]="searchData.searchParam" (ionInput)="searchRoom($event)"> </ion-searchbar> -->
+            <ion-searchbar [(ngModel)]="searchData.searchParam" (keyup.enter)="searchRoom()" placeholder="Search Rooms"> </ion-searchbar>
+        </ion-toolbar>
+    </ion-navbar>
+</ion-header>
+
+<ion-content no-padding style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
+    <ion-list>
+  
+      <ion-item *ngFor="let deal of founded" text-wrap no-lines>
+        <ion-card color="" text-center rounded>
+          <img src="{{ roomFinder.BASEURL +'/RoomImage/' + deal.roomImage[0] }}" alt="Room Image" />
+          <ion-card-content>
+            <ion-card-title>
+              <b style="font-size:17px; float: left; ">
+                <ion-icon name="pin" color="red"></ion-icon>
+                <b color="black">{{ deal.location}}</b>
+              </b>
+  
+              <b style="font-size: 17px; float: right">
+                <ion-icon name="cash" color="green"></ion-icon>
+                <b>Rs: {{deal.price}}</b>
+              </b>
+            </ion-card-title>
+  
+            <Button ion-button medium color="green" block (click)="viewDetails(deal)" style="margin-top:25px;">
+              View Details
+            </Button>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+  
+    </ion-list>
+  </ion-content>

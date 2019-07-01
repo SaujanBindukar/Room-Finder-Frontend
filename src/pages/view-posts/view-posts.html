@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Posts</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
+  <ion-list>
+    <ion-item *ngFor="let deal of myPosts" text-wrap no-lines>
+      <ion-card color="" text-center rounded>
+        <img src="{{ roomFinder.BASEURL +'/RoomImage/' + deal.roomImage[0] }}" alt="Room Image" />
+        <ion-card-content>
+          <ion-card-title>
+            <b style="font-size:17px; float: left; ">
+              <ion-icon name="pin" color="red"></ion-icon>
+              <b color="black">{{ deal.location}}</b>
+            </b>
+
+            <b style="font-size: 17px; float: right">
+              <ion-icon name="cash" color="green"></ion-icon>
+              <b>Rs: {{deal.price}}</b>
+            </b>
+          </ion-card-title>
+
+          <ion-buttons position>
+            <Button ion-button medium color="green" (click)="viewDetails(deal)" start style="margin-top:25px;">
+              View 
+            </Button>
+            <Button ion-button medium color="green" (click)="deleteRoom(deal)" end style="margin-top:25px;">
+              Delete
+            </Button>
+          </ion-buttons>
+         
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+
+  </ion-list>
+  <ion-item *ngIf="!myPosts">
+    <p> You have no rooms........</p>
+  </ion-item>
+</ion-content>

@@ -1,0 +1,43 @@
+<ion-slides pager>
+  <ion-slide style="background-color:#4b18a8;" >
+      <div style="position:absolute; top:5px; padding: 4px; text-align:right; z-index:1; width: 100%">
+          <button [navPush]= "nextPage" style="color:lavender; background-color: #4b18a8; font-size: 20px;" >SKIP</button>
+        </div>
+    <h1 style="color:lavender; font-family:roboto;"> Find your perfect room</h1>
+    <p  style="color:rgb(195, 195, 223); font-family:roboto;">by Location, Price and Facilities</p>
+    <img class="img" src="assets/imgs/perfect.jpg" alt="Image 1" style="width:300px; height: 300px;">
+  </ion-slide>
+
+
+  <ion-slide style="background-color:#4b18a8; margin-top: 0px;" >
+      <div style="position:absolute; top:5px; padding: 4px; text-align:right; z-index:1; width: 100%">
+          <button  [navPush]="nextPage" style="color:lavender; background-color: #4b18a8; font-size: 20px;" >SKIP</button>
+        </div>
+      <h1 style="color:lavender; font-family:roboto;"> Get every details</h1>
+      <p  style="color:rgb(195, 195, 223); font-family:roboto;">real pictures with desciption</p>
+      <img src="assets/imgs/details.jpg" alt="Image 1" style="width:250px;">
+  </ion-slide>
+
+  <ion-slide style="background-color:#4b18a8; margin-top: 0px;" >
+      <div style="position:absolute; top:5px; padding: 4px; text-align:right; z-index:1; width: 100%">
+          <button  [navPush]="nextPage"  style="color:lavender; background-color: #4b18a8; font-size: 20px;" >SKIP</button>
+        </div>
+
+      <h1 style="color:lavender; font-family:roboto;"> Instantly Book</h1>
+      <p  style="color:rgb(195, 195, 223); font-family:roboto;">the room of your choice</p>
+      <img src="assets/imgs/booking.jpg" alt="Image 1" style="width: 250px;">
+  </ion-slide>
+
+  <ion-slide style="background-color:#4b18a8; margin-top: 0px;" >
+      <div style="position:absolute; top:5px; padding: 4px; text-align:right; z-index:1; width: 100%">
+          <button  [navPush]="nextPage" style="color:lavender; background-color: #4b18a8; font-size: 20px;" >SKIP</button>
+        </div>
+        <h1 style="color:lavender; font-family:roboto;"> Direct contact to room owners</h1>
+        <p  style="color:rgb(195, 195, 223); font-family:roboto;">to get additional details of room</p>
+        <img src="assets/imgs/connect.png" alt="Image 1" style="width: 250px">
+        <div style="position:absolute; bottom:90px; padding: 4px; text-align:center;  z-index:1; width: 100%; color:aliceblue">
+          <button ion-button  [navPush]="nextPage" style="color:#ebebeb; outline-color: white; " round outline  >Let's Go</button>
+        </div>
+  </ion-slide>
+
+</ion-slides>

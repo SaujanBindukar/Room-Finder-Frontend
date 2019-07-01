@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Personal Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3 text-center style="font-weight: bold"> Type of room you want:</h3>
+  <ion-list radio-group [(ngModel)]="yourInfo.typeOfRent">
+    <ion-buttons>
+      <button ion-item>
+        <ion-label> Flat </ion-label>
+        <ion-radio value="flat"></ion-radio>
+      </button>
+      <button ion-item>
+        <ion-label> Room </ion-label>
+        <ion-radio value="room"></ion-radio>
+      </button>
+    </ion-buttons>
+  </ion-list>
+
+  <h4 text-center style="font-weight: bold">GENDER</h4>
+  <ion-list radio-group [(ngModel)]="yourInfo.gender">
+    <ion-buttons>
+      <button ion-item>
+        <ion-label> Male </ion-label>
+        <ion-radio value="male"></ion-radio>
+      </button>
+      <button ion-item>
+        <ion-label> Female </ion-label>
+        <ion-radio value="female"></ion-radio>
+      </button>
+      <button ion-item>
+        <ion-label> Other </ion-label>
+        <ion-radio value="other"></ion-radio>
+      </button>
+    </ion-buttons>
+  </ion-list>
+
+  <h3 text-center style="font-weight: bold"> LIFE STYLE </h3>
+  <h4 text-center>FOOD</h4>
+  <ion-list radio-group [(ngModel)]="yourInfo.food">
+    <ion-buttons>
+      <button ion-item>
+        <ion-label> Vegeterian </ion-label>
+        <ion-radio value="vegeterian"></ion-radio>
+      </button>
+      <button ion-item>
+        <ion-label> Non-Vegeterian </ion-label>
+        <ion-radio value="non-vegeterian"></ion-radio>
+      </button>
+    </ion-buttons>
+  </ion-list>
+
+  <h4 text-center>SMOKING</h4>
+  <ion-list radio-group [(ngModel)]="yourInfo.smoking">
+    <ion-buttons>
+      <button ion-item>
+        <ion-label> Smoker </ion-label>
+        <ion-radio value="smoker"></ion-radio>
+      </button>
+      <button ion-item>
+        <ion-label> Non-Smoker </ion-label>
+        <ion-radio value="non-smoker"></ion-radio>
+      </button>
+    </ion-buttons>
+  </ion-list>
+
+  <h4 text-center>DRINKING</h4>
+  <ion-list radio-group [(ngModel)]="yourInfo.drinking">
+    <ion-buttons>
+      <button ion-item>
+        <ion-label> Drinker </ion-label>
+        <ion-radio value="drinker"></ion-radio>
+      </button>
+      <button ion-item>
+        <ion-label> Non-Drinker </ion-label>
+        <ion-radio value="non-drinker"></ion-radio>
+      </button>
+    </ion-buttons>
+  </ion-list>
+
+  <h4 text-center>CLEANLINESS</h4>
+  <ion-list radio-group [(ngModel)]="yourInfo.cleanliness">
+    <ion-buttons>
+      <button ion-item>
+        <ion-label> Clean </ion-label>
+        <ion-radio value="clean"></ion-radio>
+      </button>
+      <button ion-item>
+        <ion-label> Average </ion-label>
+        <ion-radio value="average"></ion-radio>
+      </button>
+      <button ion-item>
+        <ion-label> Messy </ion-label>
+        <ion-radio value="messy"></ion-radio>
+      </button>
+    </ion-buttons>
+  </ion-list>
+
+  <button ion-button block outline (click)="update()"> Update </button>
+  <ion-item>
+    <p ion-text color="danger"> {{err}} </p>
+  </ion-item>
+
+</ion-content>

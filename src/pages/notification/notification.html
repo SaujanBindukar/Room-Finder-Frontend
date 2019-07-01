@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Notification</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-list>
+    <ion-item *ngFor="let notification of notifications">
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/man.png">
+      </ion-thumbnail>
+      <h2>{{ notifications.pusherName }}</h2>
+      <p text-wrap>{{notification.message}}</p>
+      <button ion-button clear item-end (click)="viewNotification(notification)">View</button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

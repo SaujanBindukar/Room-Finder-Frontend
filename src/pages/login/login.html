@@ -1,0 +1,42 @@
+<ion-content padding>
+  <div text-center padding-top>
+      <P style="font-size: 25px; font-weight: bold">ROOM FINDER</P>
+      <img src="../../assets/imgs/logo.png" alt="Brand Logo" class="logo" style="margin-top: auto;">
+      <p style="font-size: 20px; font-weight: bold">Login to your account</p>
+
+  </div>
+
+
+
+  <div>
+    <form [formGroup]="loginForm">
+      <ion-list>
+        <ion-item>
+          <!-- <ion-label color="primary" style="font-size: 12px;" stacked>Phone</ion-label> -->
+          <ion-input type="text" placeholder="Enter Phone" formControlName="phone"> </ion-input>
+        </ion-item>
+        <ion-item>
+          <!-- <ion-label color="primary" style="font-size: 12px;" stacked>Password</ion-label> -->
+          <ion-input type="password" placeholder="Enter Password" formControlName="password"> </ion-input>
+        </ion-item>
+      </ion-list>
+    </form>
+  </div>
+
+
+  <div text-center margin-vertical>
+    <button ion-button block (click)='userLogin()' color="green" style="margin-top: 20px;">Login</button>
+  </div>
+  <ion-row margin-top>
+    <ion-col col-4 >
+      <hr>
+    </ion-col>
+    <ion-col text-center col-4 >Don't have an account?</ion-col>
+    <ion-col col-4>
+      <hr>
+    </ion-col>
+  </ion-row>
+  <div text-center>
+    <button ion-button [navPush]="SignUp" color="primary" block style="margin-top:10px;">Signup</button>
+  </div>
+</ion-content>

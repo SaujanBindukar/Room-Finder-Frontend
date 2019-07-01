@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ recipient.fullname }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content scrollDownOnLoad=true no-padding>
+  <ion-list>
+    <ion-item no-padding no-lines *ngFor="let conversation of conversations">
+
+        <div class="innerMesage" *ngIf="userObject._id == conversation.author" item-end  float-right text-wrap  style="color:white; background-color:#0084ff; display:inline-block; padding: 10px 10px; margin:5px; border-radius:10px;  ">
+        
+             {{ conversation.body }}
+        
+      </div>
+     
+      <div class="innerMesage" *ngIf="userObject._id == conversation.recipient" item-start float-left text-wrap style="color:black; background-color:#e6ecef; display:inline-block; padding: 10px 10px; margin:5px; border-radius:10px; ">
+         
+          {{ conversation.body }}
+      
+    </div>
+
+   
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <div id="footer">
+   <div class="elem"> 
+     <ion-input type="text" [(ngModel)]="body.message" placeholder="Write Message......"></ion-input>
+   </div>
+   <div class="elem">
+   <button ion-button icon-only  float-right color="success" (click)="sendMessage()" >
+        <ion-icon name="send" ></ion-icon>
+    </button>
+  </div>
+  </div>
+</ion-footer>

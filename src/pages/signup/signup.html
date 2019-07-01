@@ -1,0 +1,52 @@
+<ion-content padding>
+    <div text-center padding-top>
+        <P style="font-size: 25px; font-weight: bold">ROOM FINDER</P>
+        <img src="../../assets/imgs/logo.png" alt="Brand Logo" class="logo" style="margin-top: auto;">
+        <p style="font-size: 20px; font-weight: bold">Register your new account</p>
+
+    </div>
+
+
+    <div text-center>
+        <form [formGroup]="signupForm">
+            <ion-item>
+                <ion-label floating> Full Name</ion-label>
+                <ion-input type="text" formControlName="fullname"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating> Email</ion-label>
+                <ion-input type="email" formControlName="email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating> Phone</ion-label>
+                <ion-input type="text" formControlName="phone"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating> Password</ion-label>
+                <ion-input type="password" formControlName="password"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Confirm Password</ion-label>
+                <ion-input type="password" formControlName="confirmPassword"></ion-input>
+            </ion-item>
+            <div text-center>
+                <button ion-button margin-top color="primary" block style="width:100%;" (click)='save()'>Register</button>
+
+            </div>
+
+
+        </form>
+    </div>
+
+ <div text-center margin-top>
+        <p style="display: inline; color:black; font-weight: bold">
+            Aleady have an account?
+        </p>
+</div>
+
+<div text-center margin-top>
+    <button margin-bottom ion-button [navPush]="loginPage" block color="green">LOGIN</button>
+</div>
+
+
+</ion-content>

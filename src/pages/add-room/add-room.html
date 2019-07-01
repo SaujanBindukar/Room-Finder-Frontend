@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add Room</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]='addRoomForm'>
+    <ion-item>
+      <ion-label stacked ion-text color="primary"> Type of rent:</ion-label>
+      <ion-select formControlName="typeOfRent">
+        <ion-option value="flat">Flat</ion-option>
+        <ion-option value="room">Room</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked>Number of room</ion-label>
+      <ion-input type="number" name="numberOfRoom" min=1 formControlName='numberOfRoom'></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked> Facilities Available </ion-label>
+    </ion-item>
+
+    <ion-list formGroupName="facilitiesAvailable">
+      <ion-item class="checkbox" *ngFor="let facility of facilities">
+        <ion-label>{{facility}}</ion-label>
+        <ion-checkbox formControlName="{{facility}}"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+
+    <ion-item>
+      <ion-label stacked ion-text color="primary">Additional Features</ion-label>
+      <ion-textarea formControlName="additionalFeatures"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked ion-text color="primary">Price(in Rs.)</ion-label>
+      <ion-input type="Number" name="price" formControlName="price"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked ion-text color="primary">Location</ion-label>
+      <ion-input type="text" name="location" formControlName="location"></ion-input>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col text-center>
+          <img *ngIf="(roomImage.length == 0)" src="{{'assets/imgs/no-image.png' }}" style="width: 85%">
+          <ion-slides pager *ngIf="(roomImage.length > 0)">
+            <ion-slide *ngFor="let img of roomImage">
+              <img src="{{ img }}" style="width: 85%">
+            </ion-slide>
+          </ion-slides>
+        </ion-col>
+      </ion-row>
+      <ion-row text-center>
+        <ion-col col-6>
+          <button ion-button block outline color="dark" (click)="openCamera()" text-wrap>Camera</button>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button block outline color="dark" (click)="selectFromGallery()" text-wrap>Gallery</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div text-center margin-top>
+      <button ion-button (click)="addRoom()" round>Add Room</button>
+    </div>
+
+    <ion-item>
+      <p ion-text color="danger"> {{err}} </p>
+    </ion-item>
+  </form>
+
+
+</ion-content>
